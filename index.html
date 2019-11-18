@@ -20,18 +20,27 @@
   </button>
 
     <script>
-        var userSpecial = confirm("Do you want special characters in your password?");
-        var userNum = confirm("Do you want number?");
-        var userLower = confirm("Do you want Lowercase Characters?");
-        var userUpper = confirm("Do you wnat Uppercase characters?");
-
         var userInputAll = [];
+        var counter = 0;
+        while (counter < 1) {
+            alert("Password generator - You must agree to at least one character type for your password in the following prompts.");
+            var userSpecial = confirm("Do you want special characters in your password?");
+            var userNum = confirm("Do you want numbers?");
+            var userLower = confirm("Do you want Lowercase Characters?");
+            var userUpper = confirm("Do you wnat Uppercase characters?");
+            userInputAll.push(userSpecial + userNum + userLower + userUpper);
 
-        userInputAll.push(userSpecial + userNum + userLower + userUpper);
-        console.log(userInputAll);
+            for (var i = 0; i < userInputAll.length; i++) {
 
-        if (userInputAll < 1) {
-            alert("you must agree to at least one character type");
+                if (userInputAll[i] === 1) {
+                    counter++
+                }
+
+            }
+
+
+            console.log(userInputAll);
+
         }
 
         if (userSpecial && userNum && userLower && userUpper) {
