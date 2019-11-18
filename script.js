@@ -1,267 +1,272 @@
-var counter = 0;
-var userinputAll = [];
+document.getElementById("#generate").onclick = clickEvent;
 
-while (counter < 1) {
-    alert("Password generator - You must agree to at least one character type for your password in the following prompts:");
-    userSpecial = confirm("Do you want special characters in your password?");
-    userNum = confirm("Do you want numbers in your password?");
-    userLower = confirm("Do you want Lowercase characters in your password?");
-    userUpper = confirm("Do you wnat Uppercase characters in your password?");
-    
-    userInputAll = [userSpecial, userNum, userLower, userUpper];
+function clickEvent() {
+    alert("You must agree to at least one character type for your password in the following prompts:");
 
-    for (var i = 0; i < userInputAll.length; i++) {
-        if (userInputAll[i] === true) {
-            counter++
+
+    var counter = 0;
+    var userinputAll = [];
+
+    while (counter < 1) {
+
+        userSpecial = confirm("Do you want special characters in your password?");
+        userNum = confirm("Do you want numbers in your password?");
+        userLower = confirm("Do you want Lowercase characters in your password?");
+        userUpper = confirm("Do you wnat Uppercase characters in your password?");
+
+        userInputAll = [userSpecial, userNum, userLower, userUpper];
+
+        for (var i = 0; i < userInputAll.length; i++) {
+            if (userInputAll[i] === true) {
+                counter++
+            }
         }
     }
-}
 
-
-
-if (userSpecial && userNum && userLower && userUpper) {
-    do {
-        var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
-    }
-    while (isNaN(selection) || selection > 128 || selection < 8);
-
-    console.log(selection)
-
-    function generate(length = selection) {
-        var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var lowercase = 'abcdefghijklmnopqrstuvwxyz';
-        var numbers = '0123456789';
-        var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
-
-        var all = uppercase + lowercase + numbers + symbols;
-
-        var password = '';
-
-        for (var index = 0; index < length; index++) {
-            var character = Math.floor(Math.random() * all.length);
-            password += all.substring(character, character + 1);
+    if (userSpecial && userNum && userLower && userUpper) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
         }
+        while (isNaN(selection) || selection > 128 || selection < 8);
 
-        return password;
-    }
-    alert("Your password is " + generate());
+        console.log(selection)
 
-} else if (userSpecial && userNum && userLower) {
-    do {
-        var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
-    }
-    while (isNaN(selection) || selection > 128 || selection < 8);
+        function generate(length = selection) {
+            var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+            var numbers = '0123456789';
+            var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
 
-    console.log(selection)
+            var all = uppercase + lowercase + numbers + symbols;
 
-    function generate(length = selection) {
-        var lowercase = 'abcdefghijklmnopqrstuvwxyz';
-        var numbers = '0123456789';
-        var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
+            var password = '';
 
-        var all = lowercase + numbers + symbols;
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
 
-        var password = '';
-
-        for (var index = 0; index < length; index++) {
-            var character = Math.floor(Math.random() * all.length);
-            password += all.substring(character, character + 1);
+            return password;
         }
+        alert("Your password is " + generate());
 
-        return password;
-    }
-    alert("Your password is " + generate());
-
-} else if (userSpecial && userNum) {
-    do {
-        var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
-    }
-    while (isNaN(selection) || selection > 128 || selection < 8);
-
-    console.log(selection)
-
-    function generate(length = selection) {
-        var numbers = '0123456789';
-        var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
-
-        var all = numbers + symbols;
-
-        var password = '';
-
-        for (var index = 0; index < length; index++) {
-            var character = Math.floor(Math.random() * all.length);
-            password += all.substring(character, character + 1);
+    } else if (userSpecial && userNum && userLower) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
         }
+        while (isNaN(selection) || selection > 128 || selection < 8);
 
-        return password;
-    }
-    alert("Your password is " + generate());
-} else if (userSpecial) {
-    do {
-        var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
-    }
-    while (isNaN(selection) || selection > 128 || selection < 8);
+        console.log(selection)
 
-    console.log(selection)
+        function generate(length = selection) {
+            var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+            var numbers = '0123456789';
+            var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
 
-    function generate(length = selection) {
-        var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
+            var all = lowercase + numbers + symbols;
 
-        var all = symbols;
+            var password = '';
 
-        var password = '';
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
 
-        for (var index = 0; index < length; index++) {
-            var character = Math.floor(Math.random() * all.length);
-            password += all.substring(character, character + 1);
+            return password;
         }
+        alert("Your password is " + generate());
 
-        return password;
-    }
-    alert("Your password is " + generate());
-} else if (userNum && userLower && userUpper) {
-    do {
-        var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
-    }
-    while (isNaN(selection) || selection > 128 || selection < 8);
-
-    console.log(selection)
-
-    function generate(length = selection) {
-        var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var lowercase = 'abcdefghijklmnopqrstuvwxyz';
-        var numbers = '0123456789';
-
-        var all = uppercase + lowercase + numbers;
-
-        var password = '';
-
-        for (var index = 0; index < length; index++) {
-            var character = Math.floor(Math.random() * all.length);
-            password += all.substring(character, character + 1);
+    } else if (userSpecial && userNum) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
         }
+        while (isNaN(selection) || selection > 128 || selection < 8);
 
-        return password;
-    }
-    alert("Your password is " + generate());
-} else if (userNum && userLower) {
-    do {
-        var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
-    }
-    while (isNaN(selection) || selection > 128 || selection < 8);
+        console.log(selection)
 
-    console.log(selection)
+        function generate(length = selection) {
+            var numbers = '0123456789';
+            var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
 
-    function generate(length = selection) {
-        var lowercase = 'abcdefghijklmnopqrstuvwxyz';
-        var numbers = '0123456789';
+            var all = numbers + symbols;
 
-        var all = lowercase + numbers;
+            var password = '';
 
-        var password = '';
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
 
-        for (var index = 0; index < length; index++) {
-            var character = Math.floor(Math.random() * all.length);
-            password += all.substring(character, character + 1);
+            return password;
         }
-
-        return password;
-    }
-    alert("Your password is " + generate());
-} else if (userNum) {
-    do {
-        var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
-    }
-    while (isNaN(selection) || selection > 128 || selection < 8);
-
-    console.log(selection)
-
-    function generate(length = selection) {
-        var numbers = '0123456789';
-
-        var all = numbers;
-
-        var password = '';
-
-        for (var index = 0; index < length; index++) {
-            var character = Math.floor(Math.random() * all.length);
-            password += all.substring(character, character + 1);
+        alert("Your password is " + generate());
+    } else if (userSpecial) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
         }
+        while (isNaN(selection) || selection > 128 || selection < 8);
 
-        return password;
-    }
-    alert("Your password is " + generate());
-} else if (userLower && userUpper) {
-    do {
-        var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
-    }
-    while (isNaN(selection) || selection > 128 || selection < 8);
+        console.log(selection)
 
-    console.log(selection)
+        function generate(length = selection) {
+            var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
 
-    function generate(length = selection) {
-        var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+            var all = symbols;
 
-        var all = uppercase + lowercase;
+            var password = '';
 
-        var password = '';
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
 
-        for (var index = 0; index < length; index++) {
-            var character = Math.floor(Math.random() * all.length);
-            password += all.substring(character, character + 1);
+            return password;
         }
-
-        return password;
-    }
-    alert("Your password is " + generate());
-
-} else if (userUpper) {
-    do {
-        var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
-    }
-    while (isNaN(selection) || selection > 128 || selection < 8);
-
-    console.log(selection)
-
-    function generate(length = selection) {
-        var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-        var all = uppercase;
-
-        var password = '';
-
-        for (var index = 0; index < length; index++) {
-            var character = Math.floor(Math.random() * all.length);
-            password += all.substring(character, character + 1);
+        alert("Your password is " + generate());
+    } else if (userNum && userLower && userUpper) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
         }
+        while (isNaN(selection) || selection > 128 || selection < 8);
 
-        return password;
-    }
-    alert("Your password is " + generate());
+        console.log(selection)
 
-} else if (userLower) {
-    do {
-        var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
-    }
-    while (isNaN(selection) || selection > 128 || selection < 8);
+        function generate(length = selection) {
+            var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+            var numbers = '0123456789';
 
-    console.log(selection)
+            var all = uppercase + lowercase + numbers;
 
-    function generate(length = selection) {
-        var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+            var password = '';
 
-        var all = lowercase;
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
 
-        var password = '';
-
-        for (var index = 0; index < length; index++) {
-            var character = Math.floor(Math.random() * all.length);
-            password += all.substring(character, character + 1);
+            return password;
         }
+        alert("Your password is " + generate());
+    } else if (userNum && userLower) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
+        }
+        while (isNaN(selection) || selection > 128 || selection < 8);
 
-        return password;
+        console.log(selection)
+
+        function generate(length = selection) {
+            var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+            var numbers = '0123456789';
+
+            var all = lowercase + numbers;
+
+            var password = '';
+
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
+
+            return password;
+        }
+        alert("Your password is " + generate());
+    } else if (userNum) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
+        }
+        while (isNaN(selection) || selection > 128 || selection < 8);
+
+        console.log(selection)
+
+        function generate(length = selection) {
+            var numbers = '0123456789';
+
+            var all = numbers;
+
+            var password = '';
+
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
+
+            return password;
+        }
+        alert("Your password is " + generate());
+    } else if (userLower && userUpper) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
+        }
+        while (isNaN(selection) || selection > 128 || selection < 8);
+
+        console.log(selection)
+
+        function generate(length = selection) {
+            var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+
+            var all = uppercase + lowercase;
+
+            var password = '';
+
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
+
+            return password;
+        }
+        alert("Your password is " + generate());
+
+    } else if (userUpper) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
+        }
+        while (isNaN(selection) || selection > 128 || selection < 8);
+
+        console.log(selection)
+
+        function generate(length = selection) {
+            var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+            var all = uppercase;
+
+            var password = '';
+
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
+
+            return password;
+        }
+        alert("Your password is " + generate());
+
+    } else if (userLower) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
+        }
+        while (isNaN(selection) || selection > 128 || selection < 8);
+
+        console.log(selection)
+
+        function generate(length = selection) {
+            var lowercase = 'abcdefghijklmnopqrstuvwxyz';
+
+            var all = lowercase;
+
+            var password = '';
+
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
+
+            return password;
+        }
+        alert("Your password is " + generate());
+
     }
-    alert("Your password is " + generate());
-
-}
+};
