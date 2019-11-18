@@ -1,14 +1,12 @@
 var userInputAll = [];
 var counter = 0;
-console.log(`entering while loop`);
 
-var userSpecial = false;
-var userNum = false;
-var userLower = false;
-var userUpper = false;
+var userSpecial = [];
+var userNum = [];
+var userLower = [];
+var userUpper = [];
 
 while (counter < 1) {
-    console.log(`counter: ${counter}`);
     alert("Password generator - You must agree to at least one character type for your password in the following prompts:");
     userSpecial = confirm("Do you want special characters in your password?");
     userNum = confirm("Do you want numbers in your password?");
@@ -20,17 +18,16 @@ while (counter < 1) {
     userInputAll.push(userUpper);
 
 
-    console.dir(userInputAll);
+    console.log(userInputAll);
 
     for (var i = 0; i < userInputAll.length; i++) {
-        console.log(`userInputAll[i] at ${i}: ${userInputAll[i]}`)
         if (userInputAll[i] === true) {
             counter++
         }
 
     }
 
-    console.log(`userinput array: ${userInputAll}`);
+    console.log("userinput array:" + userInputAll);
 
 
 }
