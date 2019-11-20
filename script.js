@@ -47,8 +47,15 @@ function clickEvent() {
             }
 
             return password;
+
+
         }
         alert("Your password is " + generate());
+        document.body.children[2].append(generate());
+
+
+
+
 
     } else if (userSpecial && userNum && userLower) {
         do {
@@ -75,6 +82,7 @@ function clickEvent() {
             return password;
         }
         alert("Your password is " + generate());
+        document.body.children[2].append(generate());
 
     } else if (userSpecial && userNum) {
         do {
@@ -100,6 +108,8 @@ function clickEvent() {
             return password;
         }
         alert("Your password is " + generate());
+        document.body.children[2].append(generate());
+
     } else if (userSpecial) {
         do {
             var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
@@ -123,6 +133,8 @@ function clickEvent() {
             return password;
         }
         alert("Your password is " + generate());
+        document.body.children[2].append(generate());
+
     } else if (userNum && userLower && userUpper) {
         do {
             var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
@@ -148,6 +160,8 @@ function clickEvent() {
             return password;
         }
         alert("Your password is " + generate());
+        document.body.children[2].append(generate());
+
     } else if (userNum && userLower) {
         do {
             var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
@@ -172,6 +186,8 @@ function clickEvent() {
             return password;
         }
         alert("Your password is " + generate());
+        document.body.children[2].append(generate());
+
     } else if (userNum) {
         do {
             var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
@@ -195,6 +211,7 @@ function clickEvent() {
             return password;
         }
         alert("Your password is " + generate());
+        document.body.children[2].append(generate());
     } else if (userLower && userUpper) {
         do {
             var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
@@ -219,6 +236,7 @@ function clickEvent() {
             return password;
         }
         alert("Your password is " + generate());
+        document.body.children[2].append(generate());
 
     } else if (userUpper) {
         do {
@@ -243,6 +261,7 @@ function clickEvent() {
             return password;
         }
         alert("Your password is " + generate());
+        document.body.children[2].append(generate());
 
     } else if (userLower) {
         do {
@@ -267,6 +286,7 @@ function clickEvent() {
             return password;
         }
         alert("Your password is " + generate());
+        document.body.children[2].append(generate());
 
     }
 };
