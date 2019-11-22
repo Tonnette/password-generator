@@ -20,32 +20,51 @@
                     <h1>Password Generator</h1>
                 </header>
             </div>
-
         </div>
         <div class="row">
-            <div class="col-lg-12">
-                <h2>Generate a Password</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 col-sm-12">
-                <textarea readonly id="password" placeholder="Your Secure Password"
-                    aria-label="Generated Password"></textarea>
-            </div>
-        </div>
-        <div class="row" id="myRow">
-            <div class="col text-center">
-                <button type="button" class="btn btn-danger" id="generate" onclick="clickEvent();">Generate
-                    Password</button>
+            <div class="col-lg-12 bigBox">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>Generate a Password</h2>
+                    </div>
+                </div>
+                <div class="container">
+                    <form>
+                        <div class="form-group" class = "col text-center" >
+                                <textarea class="form-control" id="passwordBox" rows="5" readonly id="password" id="comment"
+                                    placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
+                            
+                        </div>
+                    </form>
 
+
+
+
+
+
+
+
+
+
+                </div>
+                <div class="row" id="myRow">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-danger" id="generate" onclick="clickEvent();">Generate
+                            Password</button>
+
+                    </div>
+                    <div class="col text-center">
+                        <button type="button" id="copy" class="btn btn-secondary">Copy to Clipboard</button>
+                    </div>
+                </div>
             </div>
-            <div class="col text-center">
-                <button type="button" id="copy" class="btn btn-secondary">Copy to Clipboard</button>
-            </div>
+
         </div>
     </div>
 
-   
+    </div>
+
+
 
 
 
