@@ -51,7 +51,8 @@ function clickEvent() {
 
         }
         alert("Your password is " + generate());
-        document.body.children[2].append(generate());
+        var myPassword = document.getElementById("password");
+        myPassword.append(generate());
 
 
 
