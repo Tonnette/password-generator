@@ -1,3 +1,8 @@
+
+
+
+
+
 document.getElementById("#generate").onclick = clickEvent;
 
 function clickEvent() {
@@ -319,4 +324,16 @@ function clickEvent() {
     }
     var myPassword = document.getElementById("passwordBox");
     myPassword.append(generate());
+
+   
 };
+
+function myCopyFunction() {
+    var copyText = document.getElementById("passwordBox");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    alert("Copied the text: " + copyText.value);
+  }
+
+
