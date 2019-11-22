@@ -47,16 +47,55 @@ function clickEvent() {
             }
 
             return password;
-
-
         }
-        alert("Your password is " + generate());
-        var myPassword = document.getElementById("password");
-        myPassword.append(generate());
 
+    } else if (userSpecial && userLower) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
+        }
+        while (isNaN(selection) || selection > 128 || selection < 8);
 
+        console.log(selection)
 
+        function generate(length = selection) {
+            var lowercase = 'abcdefghijklmnopqrstuvwxyz';;
+            var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
 
+            var all = lowercase + symbols;
+
+            var password = '';
+
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
+
+            return password;
+        }
+
+    } else if (userSpecial && userUpper) {
+        do {
+            var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
+        }
+        while (isNaN(selection) || selection > 128 || selection < 8);
+
+        console.log(selection)
+
+        function generate(length = selection) {
+            var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            var symbols = '!"#$%&\'()*+,-./:;<=>?@^[\\]^_`{|}~';
+
+            var all = uppercase + symbols;
+
+            var password = '';
+
+            for (var index = 0; index < length; index++) {
+                var character = Math.floor(Math.random() * all.length);
+                password += all.substring(character, character + 1);
+            }
+
+            return password;
+        }
 
     } else if (userSpecial && userNum && userLower) {
         do {
@@ -82,8 +121,7 @@ function clickEvent() {
 
             return password;
         }
-        alert("Your password is " + generate());
-        document.body.children[2].append(generate());
+
 
     } else if (userSpecial && userNum) {
         do {
@@ -108,8 +146,6 @@ function clickEvent() {
 
             return password;
         }
-        alert("Your password is " + generate());
-        document.body.children[2].append(generate());
 
     } else if (userSpecial) {
         do {
@@ -133,8 +169,6 @@ function clickEvent() {
 
             return password;
         }
-        alert("Your password is " + generate());
-        document.body.children[2].append(generate());
 
     } else if (userNum && userLower && userUpper) {
         do {
@@ -160,8 +194,7 @@ function clickEvent() {
 
             return password;
         }
-        alert("Your password is " + generate());
-        document.body.children[2].append(generate());
+
 
     } else if (userNum && userLower) {
         do {
@@ -186,8 +219,7 @@ function clickEvent() {
 
             return password;
         }
-        alert("Your password is " + generate());
-        document.body.children[2].append(generate());
+
 
     } else if (userNum) {
         do {
@@ -211,8 +243,7 @@ function clickEvent() {
 
             return password;
         }
-        alert("Your password is " + generate());
-        document.body.children[2].append(generate());
+
     } else if (userLower && userUpper) {
         do {
             var selection = parseInt(window.prompt("Please enter a password length between 8 - 128 characters", ""), 10);
@@ -236,8 +267,7 @@ function clickEvent() {
 
             return password;
         }
-        alert("Your password is " + generate());
-        document.body.children[2].append(generate());
+
 
     } else if (userUpper) {
         do {
@@ -261,8 +291,6 @@ function clickEvent() {
 
             return password;
         }
-        alert("Your password is " + generate());
-        document.body.children[2].append(generate());
 
     } else if (userLower) {
         do {
@@ -286,8 +314,9 @@ function clickEvent() {
 
             return password;
         }
-        alert("Your password is " + generate());
-        document.body.children[2].append(generate());
+
 
     }
+    var myPassword = document.getElementById("passwordBox");
+    myPassword.append(generate());
 };
