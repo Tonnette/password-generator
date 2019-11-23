@@ -16,6 +16,10 @@ This password can also be saved to the clipboard.
 # what it looks like
 <img width="1407" alt="Screen Shot 2019-11-23 at 9 15 41 pm" src="https://user-images.githubusercontent.com/55980782/69477255-0d297680-0e38-11ea-935c-75f13bc69566.png">
 
+# how you find it
+My password generator is found here:
+
+Tonnette.github.io
 
 # Tech/framework used
 This website was built using bootstrap, html, CSS and JavaScript
