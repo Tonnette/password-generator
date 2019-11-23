@@ -21,6 +21,9 @@ My password generator is found here:
 
 Tonnette.github.io
 
+My github repository is here:
+https://github.com/Tonnette/Tonnette.github.io
+
 # Tech/framework used
 This website was built using bootstrap, html, CSS and JavaScript
 
